@@ -1,0 +1,9 @@
+__pycache__/
+migrations/
+__init__.py
+db.sqlite3
+manage.py
+tests.py
+apps.py
+asgi.py
+wsgi.py
