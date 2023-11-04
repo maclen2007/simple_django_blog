@@ -72,9 +72,12 @@
   <!-- Main Content -->
   <div class="container">
     {% block content %}
-      {% for post in posts %}
+      {% for post in page %}
         {% include "includes/post_in_cat.html" with post=post %}
       {% endfor %}
+
+      {% include "includes/paginator.html" %}
+
     {% endblock %}
   </div>
 
