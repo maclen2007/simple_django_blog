@@ -132,3 +132,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'newapp/static'),]
 LOGIN_REDIRECT_URL = 'posts:index'
 LOGOUT_REDIRECT_URL = 'posts:index'
 LOGIN_URL = '/auth/login'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

@@ -7,3 +7,4 @@ tests.py
 apps.py
 asgi.py
 wsgi.py
+media/

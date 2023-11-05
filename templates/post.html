@@ -6,3 +6,5 @@
 {% block content %}
   {{ post.text }}
 {% endblock %}
+
+{% block image %} {% if post.image %} {{ post.image.url }} {% endif %} {% endblock %}
