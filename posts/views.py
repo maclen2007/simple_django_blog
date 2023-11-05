@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 
-from .models import Post
+from .models import Post, User
 
 paginator_pages = 1
 
@@ -18,3 +18,18 @@ def post_view(request, post_id):
     'post': post,
   }
   return render(request, 'post.html', context)
+
+def profile(request, username):
+  author = get_object_or_404(User, username=username)
+  posts = author.posts.all()
+  paginator = Paginator(posts, paginator_pages)
+  page = paginator.get_page(request.GET.get('page'))
+  status = None
+  if request.user.is_authenticated:
+    status = "Пользователь авторизован"
+    context = {
+      'author': author,
+      'page': page,
+      'status': status,
+    }
+    return render(request, 'profile.html', context)
