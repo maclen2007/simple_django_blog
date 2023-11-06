@@ -15,7 +15,11 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            {{ status }}
+            <a href="{% url 'posts:new_post' %}" style="text-decoration:underline">Создать пост</a>
+           </li>
+          <li class="list-group-item">
+            <a href="{% url 'password_change' %}" style="text-decoration:underline">Смена пароля</a><br/>
+            <a href="{% url 'logout' %}" style="text-decoration:underline">Выход</a>
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">

@@ -41,14 +41,24 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="{% url 'pages:about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li style="color: #FFF;"class="separator"> | </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'posts:profile' request.user.username %}">Личный кабинет</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link"href="{% url 'signup' %}">Регистрация</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="{% url 'login' %}">Авторизация</a>
           </li>
+          {% endif %}          
         </ul>
       </div>
     </div>
