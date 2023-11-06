@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block h1 %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+{{ text }}
+{% endblock %}
+
+{% load static %}
+{% block image %} {% static "img/about-bg.jpg" %} {% endblock %}
