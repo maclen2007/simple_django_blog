@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
-    'users'
+    'users',
+    'contacts'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,8 @@ LOGIN_URL = '/auth/login'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+DEFAULT_FROM_EMAIL = 'admin@my.site'
+RECIPIENTS_EMAIL = ['noreply@my.site']
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
